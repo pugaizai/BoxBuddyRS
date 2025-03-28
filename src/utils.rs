@@ -697,7 +697,7 @@ pub fn get_icon_file_path(icon: &str) -> String {
 
     let home_dir = env::var("HOME").unwrap_or_else(|_| ".".to_string());
     let data_home =
-        env::var("XDG_DATA_HOME").unwrap_or_else(|_| format!("{home_dir}/.local/share"));
+        env::var("XDG_DATA_DIRS").unwrap_or_else(|_| format!("{home_dir}/.local/share"));
 
     format!("{data_home}/icons/boxbuddy/{icon}")
 }
